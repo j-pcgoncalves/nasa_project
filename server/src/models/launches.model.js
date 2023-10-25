@@ -17,8 +17,10 @@ function existsLaunchWithId(launchId) {
     return launches.has(launchId);
 }
 
-function getAllLaunches() {
-    return Array.from(launches.values());
+async function getAllLaunches() {
+    return await launches.find({}, {
+        "_id": 0, "__v": 0
+    });
 }
 
 async function saveLaunch(launch) {
