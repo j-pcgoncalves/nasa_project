@@ -13,6 +13,11 @@ async function mongoConnect() {
     mongoose.connect(secretConfig.MONGO_URL);
 }
 
+async function mongoDisconnect() {
+    await mongoose.disconnect();
+}
+
 module.exports = {
     mongoConnect,
+    mongoDisconnect,
 };
