@@ -1,5 +1,9 @@
 const mongoose = require("mongoose");
-const { secretConfig } = require("../secretConfig");
+const path = require("path");
+
+require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
+
+const MONGO_URL = process.env.MONGO_URL;
 
 mongoose.connection.once("open", () => {
     console.log("MongoDB connection ready!");
@@ -10,7 +14,7 @@ mongoose.connection.on("error", (err) => {
 });
 
 async function mongoConnect() {
-    mongoose.connect(secretConfig.MONGO_URL);
+    await mongoose.connect(MONGO_URL);
 }
 
 async function mongoDisconnect() {
