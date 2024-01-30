@@ -4,7 +4,7 @@ This project is made with React for the Front-End and NodeJS and Express for the
 
 ## How to Use
 
-To run this project in your computer you can clone it. After that you need to create an .env file inside server/src/ and inside that file you will create the following variable:
+To run this project in your computer you can clone it and run "npm install" in the root of the project to install dependencies. After that you need to create an .env file inside server/src/ and inside that file you will create the following variable:
 - MONGO_URL: "path to your own mongoDB database"
 
 With all set you can write in your terminal "npm run deploy" to start the development server.
